@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2563eb">
+  <title>标签管理</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./css/style.css">
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js"));
+    }
+  </script>
+</head>
+<body>
+  <div class="app">
+    <a class="back-link" href="./index.html">← 返回周日历</a>
+    <h2 class="page-title">标签管理</h2>
+
+    <div class="inline-row">
+      <input type="text" id="tagNameInput" class="input flex-1" placeholder="新增标签名称">
+      <button class="btn btn-blue" id="addTagBtn">新增</button>
+    </div>
+    <p class="hint">删除标签不会删除日记，只会解除关联。</p>
+
+    <div id="tagList"></div>
+  </div>
+
+  <script type="module" src="./js/tags.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2563eb">
+  <title>编辑日记</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./css/style.css">
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js"));
+    }
+  </script>
+</head>
+<body>
+  <div class="app">
+    <a class="back-link" href="./index.html">← 返回周日历</a>
+    <h2 id="pageTitle" class="page-title">新建日记</h2>
+
+    <label class="field-label">日记日期</label>
+    <input type="date" id="diaryDate" class="input" />
+
+    <label class="field-label">标签（点击选择 / 取消）</label>
+    <div id="tagListBox" class="tag-list"></div>
+    <div class="inline-row">
+      <input type="text" id="newTagInput" class="input flex-1" placeholder="新建标签名">
+      <button class="btn btn-blue" id="addTempTagBtn">添加</button>
+    </div>
+
+    <label class="field-label">日记内容</label>
+    <textarea id="diaryContent" class="textarea" rows="10" placeholder="记录这一天…"></textarea>
+
+    <div class="inline-row action-row">
+      <button class="btn btn-green flex-1" id="saveBtn">保存</button>
+      <button class="btn btn-danger flex-1" id="delBtn">删除</button>
+    </div>
+  </div>
+
+  <script type="module" src="./js/edit.js"></script>
+</body>
+</html>

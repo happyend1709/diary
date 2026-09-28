@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2563eb">
+  <title>日记列表</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./css/style.css">
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js"));
+    }
+  </script>
+</head>
+<body>
+  <div class="app">
+    <a class="back-link" href="./index.html">← 返回日历</a>
+    <h2 class="page-title">日记列表</h2>
+
+    <div class="select-row">
+      <select id="yearSelect" class="input"></select>
+      <select id="monthSelect" class="input"></select>
+    </div>
+    <div id="tagFilterBox" class="tag-list"></div>
+    <div id="diaryList"></div>
+  </div>
+
+  <script type="module" src="./js/list.js"></script>
+</body>
+</html>
